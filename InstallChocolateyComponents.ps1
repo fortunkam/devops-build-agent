@@ -11,7 +11,7 @@ $Packages = @( `
             [pscustomobject]@{ name='visualstudio2017buildtools';version='latest' },`
             [pscustomobject]@{ name='pdk';version='latest' },`
             [pscustomobject]@{ name='notepadplusplus';version='latest' },`
-            [pscustomobject]@{ name='googlechrom';version='latest' },`
+            [pscustomobject]@{ name='googlechrome';version='latest' },`
             [pscustomobject]@{ name='maven';version='latest' },`
             [pscustomobject]@{ name='pester';version='latest' },`
             [pscustomobject]@{ name='sqlserver-cmdlineutils';version='latest' },`
