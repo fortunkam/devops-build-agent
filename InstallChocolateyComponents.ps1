@@ -33,4 +33,6 @@ Foreach ($Package in $Packages)
     }
 }
 
+Install-Module -Name Az -AllowClobber -Scope AllUsers -Force
+
 Restart-Computer
