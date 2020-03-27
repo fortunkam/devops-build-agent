@@ -53,7 +53,7 @@ az storage blob upload \
     --account-name $storagename \
     --account-key $storagekey
 
-subscriptionid=$(az account list --query "[?name=='mafortun AIRS Subscription'].id" --output tsv)
+subscriptionid=$(az account list --query "[?isDefault].id" -o tsv)
 scope="/subscriptions/$subscriptionid/resourceGroups/$rg/providers/Microsoft.Storage/storageAccounts/$storagename"
 
 az vm create \
