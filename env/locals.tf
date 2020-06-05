@@ -1,0 +1,15 @@
+locals {
+    rg_name = "${var.prefix}-rg"
+    storage_container_name = "scripts"
+    build_vm_name = "${var.prefix}-vm"
+    build_vm_disk = "${var.prefix}-vm-disk"
+    build_vm_username = "AzureAdmin"
+    build_vm_nic_name = "${var.prefix}-vm-nic"
+    build_vm_nic_ipconfig = "${var.prefix}-vm-ipconfig"
+    build_vm_publicip_name = "${var.prefix}-vm-publicip"
+    build_vm_nsg_name = "${var.prefix}-vm-nsg"
+    vnet_name = "${var.prefix}-vnet"
+    vm_subnet_name = "vm"
+    vnet_address_space = "10.0.0.0/24"
+    vm_subnet_address_prefix = "10.0.0.0/28"
+}
