@@ -128,6 +128,11 @@ PROTECTED_SETTINGS
     lifecycle {
         ignore_changes = all
     }
+
+     timeouts {
+        create = "2h"
+        delete = "2h"
+    }
 }
 
 

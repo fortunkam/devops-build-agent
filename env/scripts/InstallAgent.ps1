@@ -15,5 +15,5 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem ;
 
 &"c:\agent\config.cmd" --unattended --url $devopsUrl --auth pat --token $patToken --pool $agentPool --agent $agentName --runAsService
 
-&$PSScriptRoot\Initialize-VM.ps1
-&$PSScriptRoot\Install-VS2019.ps1
+powershell.exe -ExecutionPolicy Unrestricted -File $PSScriptRoot\Initialize-VM.ps1
+powershell.exe -ExecutionPolicy Unrestricted -File $PSScriptRoot\Install-VS2019.ps1
