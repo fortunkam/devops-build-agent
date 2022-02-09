@@ -54,11 +54,12 @@ resource "azurerm_network_interface_security_group_association" "vm" {
   network_security_group_id = azurerm_network_security_group.vm.id
 }
 
-resource "azurerm_windows_virtual_machine" "vm" {
+resource "azurerm_windows_virtual_machine_scale_set" "vm" {
   name                = local.build_vm_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  size = "Standard_DS3_v2"
+  sku = "Standard_DS3_v2"
+  instances = 3
   admin_username = local.build_vm_username
   admin_password = random_password.vm.result
   provision_vm_agent = true
@@ -96,7 +97,7 @@ resource "azurerm_role_assignment" "storageblobreader" {
   principal_id         = azurerm_windows_virtual_machine.vm.identity[0].principal_id
 }
 
-resource "azurerm_virtual_machine_extension" "installAgent" {
+resource "azurerm_virtual_machine_scale_set_extension" "installAgent" {
   name                 = "installAgent"
   virtual_machine_id   = azurerm_windows_virtual_machine.vm.id
   publisher            = "Microsoft.Compute"
